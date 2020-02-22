@@ -5,6 +5,9 @@ import java.util.Random;
 public class QuickSort {
     public static int ARRAY_LENGTH = 0;
     private static int[] array;
+    private static int supportingElement = 2;
+    private static int countOfRecursion = 0;
+    private static int countOfChanger = 0;
     private static Random generator = new Random();
 
     public static void setArrayLength(int ARRAY_LENGTH_PROTOTYPE)
@@ -33,10 +36,11 @@ public class QuickSort {
     }
 
     private static void doSort(int start, int end) {
+        countOfRecursion++;
         if (start >= end)
             return;
         int i = start, j = end;
-        int cur = i - (i - j) / 2;
+        int cur = i - (i - j) / supportingElement;
         while (i < j) {
             while (i < cur && (array[i] <= array[cur])) {
                 i++;
@@ -48,6 +52,7 @@ public class QuickSort {
                 int temp = array[i];
                 array[i] = array[j];
                 array[j] = temp;
+                countOfChanger++;
                 if (i == cur)
                     cur = j;
                 else if (j == cur)
@@ -56,5 +61,29 @@ public class QuickSort {
         }
         doSort(start, cur);
         doSort(cur+1, end);
+    }
+
+    public static void setSupportingElement(int supportingElement) {
+        QuickSort.supportingElement = supportingElement;
+    }
+
+    public static int getSupportingElement() {
+        return supportingElement;
+    }
+
+    public static int getCountOfRecursion() {
+        return countOfRecursion;
+    }
+
+    public static int getCountOfChanger() {
+        return countOfChanger;
+    }
+
+    public static void setCountOfRecursion(int countOfRecursion) {
+        QuickSort.countOfRecursion = countOfRecursion;
+    }
+
+    public static void setCountOfChanger(int countOfChanger) {
+        QuickSort.countOfChanger = countOfChanger;
     }
 }
