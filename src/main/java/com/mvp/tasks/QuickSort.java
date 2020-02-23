@@ -86,4 +86,12 @@ public class QuickSort {
     public static void setCountOfChanger(int countOfChanger) {
         QuickSort.countOfChanger = countOfChanger;
     }
+
+    public static void setArray(int[] array) {
+        QuickSort.array = array;
+    }
+
+    public static int getArrayLength() {
+        return ARRAY_LENGTH;
+    }
 }
