@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class ReverseNumbFromFile {
     public static StringBuilder numb = new StringBuilder();
     public static File file = new File
-            ("/home/dimon-mvp/projects/KolomiyetsPU/file/");
+            ("./file/");
 
     public ReverseNumbFromFile(){
         if (!file.exists())

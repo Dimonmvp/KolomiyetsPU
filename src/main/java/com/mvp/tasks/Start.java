@@ -17,7 +17,7 @@ public class Start {
 //        System.out.println("CountOfRecursion:"+getCountOfRecursion());
         ReverseNumbFromFile reverseNumbFromFile = new ReverseNumbFromFile();
         ReverseNumbFromFile.createFile("test");
-        ReverseNumbFromFile.writeToFile("string");
+        ReverseNumbFromFile.writeToFile("qwerty");
         ReverseNumbFromFile.readToFile();
         ReverseNumbFromFile.writeToFile(ReverseNumbFromFile.getNumb().toString());
 
